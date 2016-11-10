@@ -1,6 +1,5 @@
-const supportsCustomElementsV1 = 'customElements' in window;
-
 function InitPassField() {
+
   class PassField extends HTMLElement {
 
     constructor() {
@@ -9,7 +8,7 @@ function InitPassField() {
 
       let shadowRoot = this.attachShadow({mode: 'open'});
       shadowRoot.innerHTML = `
-        <link rel="stylesheet" href="..css/password-field.css">
+        <link rel="stylesheet" href="css/password-field.css">
         <h2>Password input</h2>
         <div class="ln-c-form-group">
           <label for="demo-input-${this.getId()}" class="ln-c-label">
@@ -144,13 +143,17 @@ function loadScript(src) {
  });
 }
 
+const supportsCustomElementsV1 = 'customElements' in window;
+
 // Lazy load the polyfill if necessary.
 if (!supportsCustomElementsV1) {
   console.log('Need Polyfill')
-  loadScript('./js/custom-elements.min.js').then(e => {
-    console.log('Polyfill Added')
-    InitPassField()
-  });
+  loadScript('../bower_components/custom-elements/custom-elements.min.js')
+    .then(e => loadScript('../bower_components/shadydom/shadydom.min.js'))
+    .then(e => {
+      console.log('Polyfill Added')
+      InitPassField()
+    });
 } else {
   console.log('Polyfill Not Needed')
   InitPassField()
