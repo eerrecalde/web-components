@@ -1,8 +1,12 @@
+<!doctype html>
 <html>
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+
   <title>Web Components</title>
-  <script src="js/webcomponents.js"></script>
+
+  <script src="../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
   <style>
     password-field {font-family: Arial;}
     .container {
@@ -10,8 +14,7 @@
       margin: 0 auto;
     }
   </style>
-  <link rel="import"
-      href="components/PasswordField.html">
+  <link rel="import" href="components/PasswordField.html">
 </head>
 <body>
 
@@ -21,7 +24,5 @@
     <password-field strength-meter="true"></password-field>
     <password-field></password-field>
   </div>
-
-  <!-- <script src="js/PasswordField.js" charset="utf-8"></script> -->
 </body>
 </html>
