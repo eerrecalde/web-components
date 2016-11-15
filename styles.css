@@ -4,6 +4,12 @@
 
 password-field {font-family: Arial;}
 
+code {
+  background: #eee;
+  border-radius: 2px;
+  padding: 2px 5px;
+}
+
 .container a{
   color: #333;
   text-decoration: none;
