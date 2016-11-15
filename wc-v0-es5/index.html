@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Web Components</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="./js/webcomponents.min.js"></script>
+  <style>
+    .container {
+      max-width: 500px;
+    }
+  </style>
+  <link rel="import" href="components/PasswordField.html">
+</head>
+<body>
+
+
+  <div class="container">
+    <a class="back-btn" href="/index.html">< Back</a>
+    <div class="card">
+      <password-field strength-meter="true" show-hide-password="true"></password-field>
+      <password-field show-hide-password></password-field>
+      <password-field strength-meter="true"></password-field>
+      <password-field></password-field>
+    </div>
+  </div>
+
+  <!-- <script src="js/PasswordField.js" charset="utf-8"></script> -->
+</body>
+</html>

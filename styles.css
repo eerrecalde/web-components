@@ -1,0 +1,61 @@
+* {
+  box-sizing: border-box;
+}
+
+password-field {font-family: Arial;}
+
+.container a{
+  color: #333;
+  text-decoration: none;
+}
+
+.back-btn {
+  display: inline-block;
+  margin: 10px 0;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  font-family: Arial;
+}
+.wc-link {
+  color: #333;
+  display: block;
+  margin-bottom: 10px;
+  width: 45%;
+  margin-right: 5%;
+  float: left;
+  border: 2px solid transparent;
+  transition: border 300ms;
+}
+.wc-link:hover {
+  border-color: #999;
+}
+.card {
+  background: #f9f9f9;
+  border-radius: 2px;
+  padding: 20px;
+}
+
+h1,h2,h3,h4,h5 {
+  margin-top: 0 !important;
+}
+
+.wc-link p {
+  font-size: 1rem;
+}
+
+.wc-link h5 {
+  font-size: 1rem;
+  background: #e0e0e0;
+  padding: 5px 10px;
+  display: inline-block;
+  border-radius: 2px;
+  margin: 0;
+}
+
+.wc-link ul {
+  padding-left: 20px;
+  list-style-type: circle;
+}
