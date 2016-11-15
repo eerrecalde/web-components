@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "http-server",
+    "prepare-scripts": "cp bower_components/webcomponentsjs/webcomponents.js wc-v0/js/webcomponents.min.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
