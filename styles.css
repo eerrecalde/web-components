@@ -1,10 +1,18 @@
+/*
+ * Really shitty styles just to make the main page look better.
+ */
+
 * {
   box-sizing: border-box;
 }
 
 password-field {font-family: Arial;}
 
-code {
+.main-title {
+  text-align: center;
+}
+
+code,.gh-btn {
   background: #eee;
   border-radius: 2px;
   padding: 2px 5px;
