@@ -6,6 +6,25 @@
   box-sizing: border-box;
 }
 
+@font-face {
+    font-family: MaryAnn;
+    font-style: normal;
+    font-weight: 400;
+    src: url(../assets/fonts/mary_ann-regular.woff)
+}
+@font-face {
+    font-family: MaryAnn;
+    font-style: normal;
+    font-weight: 500;
+    src: url(../assets/fonts/mary_ann-medium.woff)
+}
+@font-face {
+    font-family: MaryAnn;
+    font-style: normal;
+    font-weight: 700;
+    src: url(../assets/fonts/mary_ann-extrabold.woff)
+}
+
 password-field {font-family: Arial;}
 
 .main-title {

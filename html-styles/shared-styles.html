@@ -1,0 +1,104 @@
+<dom-module id="shared-styles">
+  <template>
+    <style>
+      /*
+       * Really shitty styles just to make the main page look better.
+       */
+
+      * {
+        box-sizing: border-box;
+      }
+
+      @font-face {
+          font-family: MaryAnn;
+          font-style: normal;
+          font-weight: 400;
+          src: url(../assets/fonts/mary_ann-regular.woff)
+      }
+      @font-face {
+          font-family: MaryAnn;
+          font-style: normal;
+          font-weight: 500;
+          src: url(../assets/fonts/mary_ann-medium.woff)
+      }
+      @font-face {
+          font-family: MaryAnn;
+          font-style: normal;
+          font-weight: 700;
+          src: url(../assets/fonts/mary_ann-extrabold.woff)
+      }
+
+      password-field {font-family: Arial;}
+
+      .main-title {
+        text-align: center;
+      }
+
+      code,.gh-btn {
+        background: #eee;
+        border-radius: 2px;
+        padding: 2px 5px;
+      }
+
+      .container a{
+        color: #333;
+        text-decoration: none;
+      }
+
+      .back-btn {
+        display: inline-block;
+        margin: 10px 0;
+      }
+
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+        font-family: Arial;
+      }
+      .wc-link {
+        color: #333;
+        display: block;
+        margin-bottom: 10px;
+        width: 45%;
+        margin-right: 5%;
+        margin-bottom: 30px;
+        float: left;
+        border: 2px solid transparent;
+        transition: border 300ms;
+        height: 500px;
+        overflow: auto;
+      }
+      .wc-link:hover {
+        border-color: #999;
+      }
+      .card {
+        background: #f9f9f9;
+        border-radius: 2px;
+        padding: 20px;
+      }
+
+      h1,h2,h3,h4,h5 {
+        margin-top: 0 !important;
+      }
+
+      .wc-link p {
+        font-size: 1rem;
+      }
+
+      .wc-link h5 {
+        font-size: 1rem;
+        background: #e0e0e0;
+        padding: 5px 10px;
+        display: inline-block;
+        border-radius: 2px;
+        margin: 0;
+      }
+
+      .wc-link ul {
+        padding-left: 20px;
+        list-style-type: circle;
+      }
+
+    </style>
+  </template>
+</dom-module>
