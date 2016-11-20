@@ -7,6 +7,11 @@ test:
   override:
     - exit 0
 
+dependencies:
+  pre:
+    - npm install -g bower
+    - bower install
+
 deployment:
   staging:
     branch: master
