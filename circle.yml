@@ -13,7 +13,7 @@ dependencies:
     - bower install
     - rm -Rf src/modules
     - mkdir src/modules
-    - cp -R ./bower_components src/modules
+    - cp -R ./bower_components/* src/modules
 
 deployment:
   staging:
