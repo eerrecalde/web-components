@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Web Components - Native v1 and es5</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <script src="../../bower_components/webcomponentsjs/webcomponents.min.js"></script>
+  <style>
+    .container {
+      max-width: 500px;
+    }
+  </style>
+  <link rel="import" href="components/PasswordField.html">
+</head>
+<body>
+
+
+  <div class="container">
+    <h2 class="main-title">Web Components - Native v1 and es5</h2>
+    <a class="back-btn" href="../index.html">< Back</a>
+    <p>
+      <a class="gh-btn" target="_blank" href="https://github.com/eerrecalde/web-components/tree/master/wc-v0-es5">view source in GitHub</a>
+    </p>
+    <div class="card">
+      <password-field strength-meter="true" show-hide-password="true"></password-field>
+      <password-field show-hide-password></password-field>
+      <password-field strength-meter="true"></password-field>
+      <password-field></password-field>
+    </div>
+  </div>
+
+</body>
+</html>
