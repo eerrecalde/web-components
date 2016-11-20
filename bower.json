@@ -1,0 +1,7 @@
+{
+  "name": "name-of-the-app",
+  "private": true,
+  "dependencies": {
+    "webcomponentsjs": "^0.7.23"
+  }
+}

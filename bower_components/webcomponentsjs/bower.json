@@ -1,7 +1,7 @@
 {
   "name": "webcomponentsjs",
   "main": "webcomponents.js",
-  "version": "0.7.23",
+  "version": "0.7.22",
   "homepage": "http://webcomponents.org",
   "authors": [
     "The Polymer Authors"
@@ -13,6 +13,11 @@
   "keywords": [
     "webcomponents"
   ],
+  "dependencies": {
+    "custom-elements": "webcomponents/custom-elements#master",
+    "shadydom": "webcomponents/shadydom#master",
+    "shadycss": "webcomponents/shadycss#master"
+  },
   "license": "BSD",
   "ignore": [],
   "devDependencies": {
