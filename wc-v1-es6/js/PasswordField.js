@@ -1,11 +1,10 @@
-function passFunction (){
+(function() {
   class PassField extends HTMLElement {
 
     constructor() {
 
       super(); // always call super() first in the ctor.
-      console.log(document)
-      const ownerDocument = (document._currentScript || document.currentScript) ? (document._currentScript || document.currentScript).ownerDocument : document;
+      const ownerDocument = (document._currentScript || document.currentScript).ownerDocument;
       const template = ownerDocument.querySelector('#password-field-tpl');
       let shadowRoot = this.attachShadow({mode: 'open'});
       const instance = template.content.cloneNode(true);
@@ -104,8 +103,4 @@ function passFunction (){
 
   customElements.define('password-field', PassField);
 
-}
-
-setTimeout(function(){
-  passFunction()
-}, 2000)
+}())
