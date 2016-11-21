@@ -17,7 +17,6 @@
   ],
   "dependencies": {
     "webcomponentsjs": "^0.7.23",
-    "polymer": "Polymer/polymer#2.0-preview",
-    "custom-elements": "^1.0.3"
+    "polymer": "Polymer/polymer#2.0-preview"
   }
 }
