@@ -3,14 +3,41 @@
 
     constructor() {
 
-      super(); // always call super() first in the ctor.
-      const ownerDocument = (document._currentScript || document.currentScript).ownerDocument;
-      const template = ownerDocument.querySelector('#password-field-tpl');
-      let shadowRoot = this.attachShadow({mode: 'open'});
-      const instance = template.content.cloneNode(true);
-      shadowRoot.appendChild(instance);
+      super();
 
-      this.setAttrs();
+      let shadowRoot = this.attachShadow({mode: 'open'});
+      shadowRoot.innerHTML = `
+        <link rel="stylesheet" href="../css/styles.css">
+        <link rel="stylesheet" href="../css/password-field.css">
+        <h2>Password input</h2>
+        <div class="ln-c-form-group">
+          <label for="demo-input-${this.getId()}" class="ln-c-label">
+            Label ${this.getId()}
+            <span class="ln-c-label__info" aria-hidden="true">*</span>
+            <span class="ln-c-label__info ln-u-visually-hidden">Required</span>
+          </label>
+          <div class="ln-c-form-password">
+            <input type="password" placeholder="Password" id="demo-input-${this.getId()}" class="ln-c-text-input" aria-describedby="password-more-info">
+            <button type="button" class="ln-js-show-hide ln-c-form-password__toggle-button ln-c-button ln-c-button--text-only">
+              <span class="ln-js-show-hide-text">Show</span> <span class="ln-u-visually-hidden">password</span>
+            </button>
+          </div>
+          <!-- Added wrapper for screen readers to read this whole element
+          as per aria-describedby in the input field indicate -->
+          <div id="password-more-info">
+
+            <div class="ln-c-password-strength-meter">
+              <p class="ln-c-password-strength-meter__label" aria-live="polite" aria-atomic="true">
+                Strength: <span class="ln-c-password-strength-meter__value">Too short</span>
+              </p>
+            </div>
+            <!-- Little hack to force screen readers to read this as it were a separate line.
+            Otherwise it reads the previous line and this once all in 1 -->
+            <p class="ln-u-visually-hidden">. To show and hide password, tab forward.</p>
+          </div>
+        </div>
+      `;
+
       this.addListeners();
     }
 
@@ -31,16 +58,6 @@
       }
 
       return this.id;
-    }
-
-    setAttrs() {
-      const label = this.shadowRoot.querySelector('label');
-      const labelTxt = this.shadowRoot.querySelector('.label-text');
-      const input = this.shadowRoot.querySelector('input[type="password"]');
-
-      label.setAttribute('for', 'demo-input-' + this.getId());
-      input.setAttribute('id', 'demo-input-' + this.getId());
-      labelTxt.innerText = 'Label ' + this.getId();
     }
 
     strengthMeterListener() {
