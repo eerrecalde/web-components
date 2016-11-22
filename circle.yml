@@ -9,12 +9,10 @@ test:
 
 dependencies:
   pre:
+    - cd wc-v1-es5
     - rm -Rf bower_components
     - npm install -g bower
     - bower install
-    - rm -Rf src/modules
-    - mkdir src/modules
-    - cp -R ./bower_components/* src/modules
 
 deployment:
   staging:
