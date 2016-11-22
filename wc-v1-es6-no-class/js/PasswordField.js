@@ -1,33 +1,29 @@
 (function() {
-  class PassField extends HTMLElement {
 
-    constructor() {
+  const ownerDocument = (document._currentScript || document.currentScript).ownerDocument;
+  const template = ownerDocument.querySelector('#password-field-tpl');
 
-      super(); // always call super() first in the ctor.
+  // Defining the main Object
+  let PassField = Object.create(HTMLElement.prototype);
 
-      console.log('ownerDocument', document, document._currentScript, document.currentScript)
-      const ownerDocument = (document._currentScript || document.currentScript).ownerDocument;
-      const template = ownerDocument.querySelector('#password-field-tpl');
-
-
-      let shadowRoot = this.attachShadow({mode: 'open'});
-      const instance = template.content.cloneNode(true);
-      shadowRoot.appendChild(instance);
-
+  Object.assign(PassField, {
+    init() {
+      this._root = this.createRootElement();
+    },
+    createdCallback() {
+      this.init();
       this.setAttrs();
       this.addListeners();
-    }
-
-    get id() {
-      return this.getAttribute('id') || null;
-    }
-
-    set id(val) {
-      if (val) {
-        this.setAttribute('id', val);
+    },
+    createRootElement() {
+      const root = this.createShadowRoot();
+      const content = document.importNode(template.content, true);
+      if (window.ShadowDOMPolyfill) {
+        WebComponents.ShadowCSS.shimStyling(content, 'passoword-field');
       }
-    }
-
+      root.appendChild(content);
+      return root;
+    },
     getId() {
       // Generate an id if it isn't already
       if(!this.id) {
@@ -35,8 +31,7 @@
       }
 
       return this.id;
-    }
-
+    },
     setAttrs() {
       const label = this.shadowRoot.querySelector('label');
       const labelTxt = this.shadowRoot.querySelector('.label-text');
@@ -45,8 +40,7 @@
       label.setAttribute('for', 'demo-input-' + this.getId());
       input.setAttribute('id', 'demo-input-' + this.getId());
       labelTxt.innerText = 'Label ' + this.getId();
-    }
-
+    },
     strengthMeterListener() {
       const passwordEl = this.shadowRoot.querySelector('.ln-c-text-input')
       const strengthMeterEl = this.shadowRoot.querySelector('.ln-c-password-strength-meter')
@@ -77,17 +71,16 @@
 
         // Update class names for the strength meter
         if (strengthMeterEl) {
-          strengthMeterEl.className = `ln-c-password-strength-meter ${levelObject.level}`
+          strengthMeterEl.className = 'ln-c-password-strength-meter ' + levelObject.level
         }
       }
-    }
-
+    },
     showHidePasswordListener() {
       const passwordEl = this.shadowRoot.querySelector('.ln-c-text-input')
       const showHideLinkEl = this.shadowRoot.querySelector('.ln-js-show-hide')
       const showHideTextEl = this.shadowRoot.querySelector('.ln-js-show-hide-text')
 
-      showHideLinkEl.onclick = (e) => {
+      showHideLinkEl.onclick = function(e) {
         e.preventDefault()
         const attr = (passwordEl.getAttribute('type') === 'password' ? 'text' : 'password')
         const linkText = (passwordEl.getAttribute('type') === 'password' ? 'Hide' : 'Show')
@@ -95,10 +88,8 @@
         passwordEl.setAttribute('type', attr)
         showHideTextEl.innerText = linkText
       }
-    }
-
+    },
     addListeners() {
-
       // We either initialise the meter or delete the html related to it.
       if (this.getAttribute('strength-meter') !== null && this.getAttribute('strength-meter') !== "false") {
         this.strengthMeterListener();
@@ -112,10 +103,12 @@
       } else {
         this.shadowRoot.querySelector('.ln-c-form-password__toggle-button').remove();
       }
-
     }
-  }
 
-  window.customElements.define('password-field', PassField);
+  });
+
+  document.registerElement('password-field', {
+    prototype: PassField
+  })
 
 }())
