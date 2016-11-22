@@ -9,7 +9,9 @@ test:
 
 dependencies:
   pre:
+    - ls
     - cd src/wc-v1-es5
+    - ls
     - rm -Rf bower_components
     - npm install -g bower
     - bower install
