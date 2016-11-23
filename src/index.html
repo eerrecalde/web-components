@@ -11,153 +11,199 @@
     <h2 class="main-title">Click on the cards to see Demo and Source</h2>
     <a class="wc-link card" href="wc-v1-es5/index.html">
       <h3>Native v1 - es5 - Object way</h3>
-      <h5>Feature List:</h5>
-      <ul class="feature-list">
-        <li>HTML imports</li>
-        <li>Shadow DOM</li>
-        <li>Custom Elements</li>
-        <li>Templates</li>
-      </ul>
+      <ul class="wc-list">
+        <li class="wc-list-cell">
+          <h5>Feature List:</h5>
+          <ul class="feature-list">
+            <li>HTML imports</li>
+            <li>Shadow DOM</li>
+            <li style="text-decoration: line-through">Custom Elements</li>
+            <li>Templates</li>
+          </ul>
+        </li>
+        <li class="wc-list-cell">
+          <h5>Browser Test:</h5>
+          <ul class="feature-list">
+            <li>Chrome: Ok</li>
+            <li>Safari: Ok</li>
+            <li>Firefox: Ok</li>
+            <li>Native IE11: Ok</li>
+          </ul>
+        </li>
+        <li class="wc-list-cell">
+          <h5>Pros:</h5>
+          <p>Good support</p>
 
-      <h5>Browser Test:</h5>
-      <ul class="feature-list">
-        <li>Chrome: Ok</li>
-        <li>Safari: Ok</li>
-        <li>Firefox: Ok</li>
-        <li>Native IE11: Ok</li>
+          <h5>Cons:</h5>
+          <p>Not using <code>class extend</code></p>
+          <p>Not using <code>window.customElement.define</code></p>
+        </li>
       </ul>
-
-      <h5>Notes:</h5>
-      <p>Web component version: v1 </p>
-      <p>Not using <code>class extend</code></p>
-      <p>Not using <code>window.customElement.define</code></p>
     </a>
 
     <a class="wc-link card" href="wc-v1-es6-no-class/index.html">
       <h3>Native v1 - es6 - no class used</h3>
-      <h5>Feature List:</h5>
-      <ul class="feature-list">
-        <li>HTML imports</li>
-        <li>Shadow DOM</li>
-        <li>Custom Elements</li>
-        <li>Templates</li>
-      </ul>
+      <ul class="wc-list">
+        <li class="wc-list-cell">
+          <h5>Feature List:</h5>
+          <ul class="feature-list">
+            <li>HTML imports</li>
+            <li>Shadow DOM</li>
+            <li>Custom Elements</li>
+            <li>Templates</li>
+          </ul>
+        </li>
+        <li class="wc-list-cell">
+          <h5>Browser Test:</h5>
+          <ul class="feature-list">
+            <li>Chrome: Ok</li>
+            <li>Safari: Ok</li>
+            <li>Firefox: Ok</li>
+            <li>Native IE11: Not supported</li>
+          </ul>
+        </li>
+        <li class="wc-list-cell">
+          <h5>Pros:</h5>
+          <p>ES6 version. Good support once transpiled.</p>
+          <p>Using crossbrowser code</p>
 
-      <h5>Browser Test:</h5>
-      <ul class="feature-list">
-        <li>Chrome: Ok</li>
-        <li>Safari: Ok</li>
-        <li>Firefox: Ok</li>
-        <li>Native IE11: Not supported</li>
+          <h5>Cons:</h5>
+          <p>Not using <code>class extend</code></p>
+          <p>Not using <code>window.customElement.define</code></p>
+        </li>
       </ul>
-
-      <h5>Notes:</h5>
-      <p>Web component version: v1 </p>
-      <p>Not using <code>class extend</code></p>
-      <p>Not using <code>window.customElement.define</code></p>
     </a>
 
     <a class="wc-link card" href="wc-v1-es6/index.html">
       <h3>Native v1 - Class extend</h3>
-      <h5>Feature List:</h5>
-      <ul class="feature-list">
-        <li>HTML imports</li>
-        <li>Shadow DOM</li>
-        <li>Custom Elements</li>
-        <li>Templates</li>
+      <ul class="wc-list">
+        <li class="wc-list-cell">
+          <h5>Browser Test:</h5>
+          <ul class="feature-list">
+            <li>Chrome: Ok</li>
+            <li>Safari: Ok</li>
+            <li>Firefox: Not supported</li>
+            <li>Native IE11: Not supported</li>
+          </ul>
+        </li>
+        <li class="wc-list-cell">
+          <h5>Browser Test:</h5>
+          <ul class="feature-list">
+            <li>Chrome: Ok</li>
+            <li>Safari: Ok</li>
+            <li>Firefox: Not supported</li>
+            <li>Native IE11: Not supported</li>
+          </ul>
+        </li>
+        <li class="wc-list-cell">
+          <h5>Pros:</h5>
+          <p>Most updated version</p>
+          <p>Using <code>class extend</code></p>
+          <p>Using <code>window.customElement.define</code></p>
+
+          <h5>Cons:</h5>
+          <p>Safari support: Had to add older version of custom-elements script as new version doesn't work</p>
+          <p>Added styles locally: ShadowDOM + External link does't work for Safari (Issue apparently fixed in coming versions) https://bugs.webkit.org/show_bug.cgi?id=160683.</p>
+        </li>
       </ul>
-
-      <h5>Browser Test:</h5>
-      <ul class="feature-list">
-        <li>Chrome: Ok</li>
-        <li>Safari: Ok</li>
-        <li>Firefox: Not supported</li>
-        <li>Native IE11: Not supported</li>
-      </ul>
-
-      <h5>Notes:</h5>
-      <p>Web component version: v1 </p>
-      <p>Using <code>class extend</code></p>
-      <p>Using <code>window.customElement.define</code></p>
-
-      <h5>Issues:</h5>
-      <p>Safari support: Had to add older version of custom-elements script as new version doesn't work</p>
-      <p>Added styles locally: ShadowDOM + External link does't work for Safari (Issue apparently fixed in coming versions) https://bugs.webkit.org/show_bug.cgi?id=160683.</p>
     </a>
 
     <a class="wc-link card" href="wc-v1-es6-no-tpl/index.html">
       <h3>Native v1 - HTML in shadowRoot</h3>
-      <h5>Feature List:</h5>
-      <ul class="feature-list">
-        <li>HTML imports</li>
-        <li>Shadow DOM</li>
-        <li>Custom Elements</li>
-        <li style="text-decoration: line-through">Templates</li>
+      <ul class="wc-list">
+        <li class="wc-list-cell">
+          <h5>Feature List:</h5>
+          <ul class="feature-list">
+            <li>HTML imports</li>
+            <li>Shadow DOM</li>
+            <li>Custom Elements</li>
+            <li style="text-decoration: line-through">Templates</li>
+          </ul>
+        </li>
+        <li class="wc-list-cell">
+          <h5>Browser Test:</h5>
+          <ul class="feature-list">
+            <li>Chrome: Ok</li>
+            <li>Safari: Ok</li>
+            <li>Firefox: Not supported</li>
+            <li>Native IE11: Not supported</li>
+          </ul>
+        </li>
+        <li class="wc-list-cell">
+          <h5>Pros:</h5>
+          <p>Using <code>class extend</code></p>
+          <p>Using <code>window.customElement.define</code></p>
+
+          <h5>Cons:</h5>
+          <p>Template defined in the shadowRoot element (can get messy)</p>
+          <p>Safari and FF support: Had to add older version of custom-elements script as new version doesn't work</p>
+          <p>Added styles locally: ShadowDOM + External link does't work for Safari (Issue apparently fixed in coming versions) https://bugs.webkit.org/show_bug.cgi?id=160683.</p>
+        </li>
       </ul>
-
-      <h5>Browser Test:</h5>
-      <ul class="feature-list">
-        <li>Chrome: Ok</li>
-        <li>Safari: Ok</li>
-        <li>Firefox: Not supported</li>
-        <li>Native IE11: Not supported</li>
-      </ul>
-
-      <h5>Notes:</h5>
-      <p>Web component version: v1 </p>
-      <p>Template defined in the shadowRoot element</p>
-      <p>Using <code>class extend</code></p>
-      <p>Using <code>window.customElement.define</code></p>
-
-      <h5>Issues:</h5>
-      <p>Safari and FF support: Had to add older version of custom-elements script as new version doesn't work</p>
-      <p>Added styles locally: ShadowDOM + External link does't work for Safari (Issue apparently fixed in coming versions) https://bugs.webkit.org/show_bug.cgi?id=160683.</p>
     </a>
 
     <a class="wc-link card" href="wc-polymer2.0/index.html">
       <h3>Polymer 2.0</h3>
-      <h5>Feature List:</h5>
-      <ul class="feature-list">
-        <li>HTML imports</li>
-        <li>Shadow DOM</li>
-        <li>Custom Elements</li>
-        <li>Templates</li>
-      </ul>
+      <ul class="wc-list">
+        <li class="wc-list-cell">
+          <h5>Feature List:</h5>
+          <ul class="feature-list">
+            <li>HTML imports</li>
+            <li>Shadow DOM</li>
+            <li>Custom Elements</li>
+            <li>Templates</li>
+          </ul>
+        </li>
+        <li class="wc-list-cell">
+          <h5>Browser Test:</h5>
+          <ul class="feature-list">
+            <li>Chrome: Ok</li>
+            <li>Safari: Ok</li>
+            <li>Firefox: Ok</li>
+            <li>Native IE11: Ok</li>
+          </ul>
+        </li>
+        <li class="wc-list-cell">
+          <h5>Pros:</h5>
+          <p>Well supported</p>
+          <p>More documented than the actual native WCs</p>
 
-      <h5>Browser Test:</h5>
-      <ul class="feature-list">
-        <li>Chrome: Ok</li>
-        <li>Safari: Ok</li>
-        <li>Firefox: Ok</li>
-        <li>Native IE11: Ok</li>
+          <h5>Cons:</h5>
+          <p>Not a native web component :C</p>
+          <p>Requires Polymer installed w bower.</p>
+        </li>
       </ul>
-
-      <h5>Notes:</h5>
-      <p>Basically uses polymer scripts to make the code suitable for IE11</p>
-      <p>The Magic is coming from polymer code</p>
     </a>
 
     <a class="wc-link card" href="wc-bosonic/index.html">
       <h3>Bosonic (Library)</h3>
-      <h5>Feature List:</h5>
-      <ul class="feature-list">
-        <li>HTML imports</li>
-        <li>Shadow DOM</li>
-        <li>Custom Elements</li>
-        <li>Templates</li>
-      </ul>
+      <ul class="wc-list">
+        <li class="wc-list-cell">
+          <h5>Feature List:</h5>
+          <ul class="feature-list">
+            <li>HTML imports</li>
+            <li>Shadow DOM</li>
+            <li>Custom Elements</li>
+            <li>Templates</li>
+          </ul>
+        </li>
+        <li class="wc-list-cell">
+          <h5>Browser Test:</h5>
+          <ul class="feature-list">
+            <li>Chrome: Ok</li>
+            <li>Safari: Ok</li>
+            <li>Firefox: Ok</li>
+            <li>Native IE11: Ok</li>
+          </ul>
+        </li>
+        <li class="wc-list-cell">
+          <h5>Pros:</h5>
+          <p>Well supported</p>
 
-      <h5>Browser Test:</h5>
-      <ul class="feature-list">
-        <li>Chrome: Ok</li>
-        <li>Safari: Ok</li>
-        <li>Firefox: Ok</li>
-        <li>Native IE11: Ok</li>
+          <h5>Cons:</h5>
+          <p>Still an external library which consumes Polymer.</p>
+        </li>
       </ul>
-
-      <h5>Notes:</h5>
-      <p>Basically uses polymer scripts to make the code suitable for IE11</p>
-      <p>Added more browser support scripts</p>
     </a>
   </div>
 </body>
