@@ -12,11 +12,11 @@ dependencies:
     - rm -Rf bower_components
     - npm install -g bower
     - bower install webcomponentsjs#0.7.23
-    - cp bower_components src/wc-bosonic
-    - cp bower_components src/wc-v1-es5
-    - cp bower_components src/wc-v1-es6
-    - cp bower_components src/wc-v1-es6-no-class
-    - cp bower_components src/wc-v1-es6-no-tpl
+    - cp -R bower_components src/wc-bosonic
+    - cp -R bower_components src/wc-v1-es5
+    - cp -R bower_components src/wc-v1-es6
+    - cp -R bower_components src/wc-v1-es6-no-class
+    - cp -R bower_components src/wc-v1-es6-no-tpl
     - rm -Rf bower_components
     - bower install polymer#2.0-preview
     - cp bower_components src/wc-polymer2.0/bower_components
