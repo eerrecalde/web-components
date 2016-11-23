@@ -1,0 +1,21 @@
+{
+  "name": "web-components",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Emiliano Errecalde <eerrecalde@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/eerrecalde/web-components",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#2.0-preview"
+  }
+}
