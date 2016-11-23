@@ -6,9 +6,8 @@
       super(); // always call super() first in the ctor.
 
       const ownerDocument = (document._currentScript || document.currentScript).ownerDocument;
-      const template = ownerDocument.querySelector('#password-field-tpl');
-
       let shadowRoot = this.attachShadow({mode: 'open'});
+      const template = ownerDocument.querySelector('#password-field-tpl');
       const instance = template.content.cloneNode(true);
       shadowRoot.appendChild(instance);
 
