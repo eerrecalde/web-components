@@ -19,7 +19,7 @@ dependencies:
     - cp -R bower_components src/wc-v1-es6-no-tpl
     - rm -Rf bower_components
     - bower install polymer#2.0-preview
-    - cp bower_components src/wc-polymer2.0/bower_components
+    - cp -R bower_components src/wc-polymer2.0/bower_components
 
 deployment:
   staging:
