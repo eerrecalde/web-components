@@ -14,6 +14,7 @@ var template = ownerDocument.querySelector('#password-field-tpl');
   };
 
   PassField.createRootElement = function() {
+    console.log(this)
     var root = this.createShadowRoot();
     var content = document.importNode(template.content, true);
     if (window.ShadowDOMPolyfill) {
