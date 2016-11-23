@@ -12,8 +12,8 @@ dependencies:
     - rm -Rf bower_components
     - npm install -g bower
     - bower install webcomponentsjs#0.7.23
-    - cp bower_components src/bosonic/bower_components
-    - cp bower_components src/wc-v1-es5/bower_components 
+    - cp bower_components src/wc-bosonic/bower_components
+    - cp bower_components src/wc-v1-es5/bower_components
     - cp bower_components src/wc-v1-es6/bower_components
     - cp bower_components src/wc-v1-es6-no-class/bower_components
     - cp bower_components src/wc-v1-es6-no-tpl/bower_components
