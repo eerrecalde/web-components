@@ -3,7 +3,10 @@ var template = ownerDocument.querySelector('#password-field-tpl');
 
 (function() {
 
+
+  // Init process
   var PassField = Object.create(HTMLElement.prototype);
+
   PassField.createdCallback = function() {
     this.init();
     this.setAttrs();
@@ -14,7 +17,6 @@ var template = ownerDocument.querySelector('#password-field-tpl');
   };
 
   PassField.createRootElement = function() {
-    console.log(this)
     var root = this.createShadowRoot();
     var content = document.importNode(template.content, true);
     if (window.ShadowDOMPolyfill) {
@@ -23,6 +25,11 @@ var template = ownerDocument.querySelector('#password-field-tpl');
     root.appendChild(content);
     return root;
   };
+
+  document.registerElement('password-field', {
+    prototype: PassField
+  });
+  /////
 
   Object.defineProperty(PassField, "id", {
     get: function () {
@@ -121,9 +128,5 @@ var template = ownerDocument.querySelector('#password-field-tpl');
     }
 
   }
-
-  document.registerElement('password-field', {
-    prototype: PassField
-  });
 
 }())
